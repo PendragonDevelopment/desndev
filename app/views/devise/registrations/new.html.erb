@@ -1,0 +1,13 @@
+<h2>Life is a journey.</h2>
+<h3>You are the protagonist.</h3>
+<h3 class="epic one-third column">Be Epic</h3>
+<div id="reg-form" class="two-thirds column">
+	<%= render "devise/shared/regform" %>
+</div>
+<h3>Home</h3>
+<% @users.each do |user| %>
+<p>User: <%=link_to user.name, user %></p>
+<% end %>
+
+
+<%= render "devise/shared/links" %>
