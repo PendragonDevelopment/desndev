@@ -1,12 +1,20 @@
-<h2>Life is a journey.</h2>
-<h3>You are the protagonist.</h3>
-<h3 class="epic one-third column">Be Epic</h3>
-<div id="reg-form" class="two-thirds column">
-	<%- if controller_name != 'sessions' %>
-	  <%= link_to "Sign in", new_session_path(resource_name) %><br />
-	<% end -%>
-</div>
-<h3>Home</h3>
-<% @users.each do |user| %>
-<p>User: <%=link_to user.name, user %></p>
-<% end %>
+<% content_for :head do %>
+	<div>	
+		<header class="container">
+		<h2 class="ten columns">Life is a journey.</h2>
+		<h3 class="offset-by-six ten columns">You are the protagonist.</h3>
+		<h3 class="epic one-third column">Be Epic</h3>
+		</header>
+	</div>
+<% end %>	
+
+<%= render 'shared/navigation' %>
+<section class="two-thirds column">
+	<h3>Home</h3>	
+</section>
+<section class="one-third column">
+	<% @users.each do |user| %>
+		<p>User: <%=link_to user.name, user %></p>
+	<% end %>	
+</section>
+

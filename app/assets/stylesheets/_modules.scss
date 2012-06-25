@@ -1,0 +1,58 @@
+/* Front Page Styles =========================================================== */
+
+.front{
+  background-color: #0a210f;
+  color:#eee;
+  padding:3em 0;
+}
+.cta{
+  text-align: center;
+  margin:5em 0;
+  font-size:2em;
+}
+
+/*  Main Navigation ============================================================ */
+
+ul.nav {
+  float:left;
+  clear:both;
+  list-style: none;
+  margin: 1em 0 2em;
+  padding: 0;
+  &.right{
+    float:right;
+    clear:right;
+  }
+  li {
+    display: inline;
+    font-size:1.5em;
+  }
+}
+
+/* Flash notices ============================================================== */
+
+#flash_notice, #flash_alert {
+  margin: 10px 0;
+  padding: 5px 8px;
+}
+#flash_notice {
+  background-color: #CFC;
+  border: solid 1px #6C6;
+}
+#flash_alert {
+  background-color: #FCC;
+  border: solid 1px #C66;
+}
+
+/* Header Typography ========================================================= */
+
+h3.epic{
+  font-size:7em;
+  margin: 1em 0;
+}
+
+/* Footer Styles ============================================================= */
+
+footer .sixteen.columns{
+  text-align:center;
+}

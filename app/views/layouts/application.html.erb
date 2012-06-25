@@ -7,22 +7,19 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div>
-	<header class="container">
-		<h1 class="ten columns">Design &amp; Development</h1>
-	</header>
-</div>
-<div>
-	<div class="container">
+		<%= yield :head %>
 		
-		<%= yield %>
-	
+	<div>
+		<div class="container">
+			
+			<%= yield %>
+		
+		</div>
 	</div>
-</div>
-<div>
-	<footer class="container">
-		<h6>Copyright &copy; 2012 JBird Design, LLC</h6>
-	</footer>
-</div>
+	<div>
+		<footer class="container">
+			<h6>Copyright &copy; 2012 JBird Design, LLC</h6>
+		</footer>
+	</div>
 </body>
 </html>
