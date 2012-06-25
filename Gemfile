@@ -30,6 +30,7 @@ gem "database_cleaner", ">= 0.7.2", :group => :test
 gem "factory_girl_rails", ">= 3.3.0", :group => [:development, :test]
 gem "hominid"
 gem 'omniauth'
+gem 'simple_form'
 
 
 # To use ActiveModel has_secure_password

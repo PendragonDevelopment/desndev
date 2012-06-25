@@ -14,7 +14,7 @@
 </section>
 <section class="one-third column">
 	<% @users.each do |user| %>
-		<p>User: <%=link_to user.name, user %></p>
+		<p>User: <%=link_to image_tag(avatar_url(user)), user %></p>
 	<% end %>	
 </section>
 
