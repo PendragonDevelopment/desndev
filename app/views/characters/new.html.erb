@@ -1,0 +1,24 @@
+<% content_for :head do %>
+	<%= render 'shared/pageheader' %>
+<% end %>
+
+<%= simple_form_for [@user, @character] do |f| %>
+  <%= f.error_notification %>
+
+  <div class="inputs">
+    <%= f.hidden_field :user_id, :value => @user.id %>
+    <%= f.input :user_class, :collection => user_class_types %>
+    <%= f.input :proficiency, :collection => skill_proficiencies %>
+    <%= f.input :aesthetics, :collection => 1..10 %>
+    <%= f.input :analysis, :collection => 1..10 %>
+    <%= f.input :charisma, :collection => 1..10 %>
+    <%= f.input :curiosity, :collection => 1..10 %>
+    <%= f.input :empathy, :collection => 1..10 %>
+    <%= f.input :intuition, :collection => 1..10 %>
+    <%= f.input :willpower, :collection => 1..10 %>
+  </div>
+
+  <div class="actions">
+    <%= f.button :submit, "Set attributes" %>
+  </div>
+<% end %>

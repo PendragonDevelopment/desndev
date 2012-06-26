@@ -1,0 +1,7 @@
+<% content_for :head do %>
+	<%= render 'shared/pageheader' %>
+<% end %>
+
+<h1>Characters#index</h1>
+<p><%= @user.name %></p>
+<p>Create your character: <%= link_to 'New Character', new_user_character_path %></p>

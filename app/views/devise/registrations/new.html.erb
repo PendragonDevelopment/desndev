@@ -1,13 +1,22 @@
-<h2>Life is a journey.</h2>
-<h3>You are the protagonist.</h3>
-<h3 class="epic one-third column">Be Epic</h3>
-<div id="reg-form" class="two-thirds column">
-	<%= render "devise/shared/regform" %>
-</div>
-<h3>Home</h3>
-<% @users.each do |user| %>
-<p>User: <%=link_to user.name, user %></p>
+<% content_for :head do %>
+	<%= render 'shared/pageheader' %>
 <% end %>
 
+<h2>Sign up</h2>
 
-<%= render "devise/shared/links" %>
+<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="inputs">
+    <%= f.input :name, :required => true, :autofocus => true %>
+    <%= f.input :email, :required => true %>
+    <%= f.input :password, :required => true %>
+    <%= f.input :password_confirmation, :required => true %>
+  </div>
+
+  <div class="actions">
+    <%= f.button :submit, "Sign up" %>
+  </div>
+<% end %>
+
+<%= render :partial => "devise/shared/links" %>
