@@ -7,7 +7,7 @@
   </li>
   <% if user_signed_in? %>
     <li>
-      <%= link_to 'Your Character', user_path(current_user.id) %>
+      <%= link_to 'Your Character', user_character_path(current_user.id, current_user.character) %>
     </li>
   <% else %>
     <li>

@@ -56,3 +56,31 @@ h3.epic{
 footer .sixteen.columns{
   text-align:center;
 }
+
+/* Character Creation ====================================================== */
+.character-creation{
+  background-color:#ccc;
+}
+@mixin form-char-details{
+  .class-details{
+    border-bottom:1px solid #999;
+    overflow:hidden;
+    margin: 0 1.5em;
+    padding:1em 0;
+  }  
+}
+@mixin char-inputs{
+  .inputs{
+    border-top:1px solid #ddd;
+    overflow:hidden;
+    margin: 0 1.5em;
+    padding:1em 0;
+  }
+}
+.new_character, .edit_character{
+  @include form-char-details;
+  @include char-inputs;
+}
+.new_character .btn, .edit_character .btn{
+  margin:1em 1em;
+}
