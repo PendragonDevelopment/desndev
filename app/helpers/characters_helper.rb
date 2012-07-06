@@ -1,6 +1,6 @@
 module CharactersHelper
 	def user_class_types
-		['Designer', 'Developer', 'Devsigner']
+		[['Designer', 'Designer'], ['Developer', 'Developer'], ['Devsigner', 'Devsigner']]
 	end
 
 	def skill_proficiencies

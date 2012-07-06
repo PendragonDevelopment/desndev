@@ -12,14 +12,11 @@ class CharactersController < ApplicationController
 	def create
 		@user = User.find(params[:user_id])
 		@character = Character.new(params[:character])
-		respond_to do |format|
-			if @character.save
-				format.html { redirect_to(root_path, flash[:success] = "Your character was entered into the system successfully." ) }
-				format.js
-			else
-				format.html { render :action => "new" }
-				format.js
-			end
+		if @character.save
+			flash[:success] = "Your character was entered into the system successfully."
+			redirect_to root_path
+		else
+			render 'new'
 		end
 	end
 
@@ -34,15 +31,13 @@ class CharactersController < ApplicationController
 	end
 
 	def update
+		@user = User.find(params[:user_id])
 		@character = Character.find(params[:id])
-		respond_to do |format|
-			if @character.update_attributes(params[:character])  
-				format.html { redirect_to(root_path, flash[:success] = "Your character was updated successfully." ) }
-				format.js
-			else
-				format.html { render :action => "edit" }
-				format.js
-			end
+		if @character.update_attributes(params[:character])  
+			flash[:success] = "Your character was entered into the system successfully."
+			redirect_to user_character_path(@user, @character)
+		else
+			render 'edit'
 		end
 	end
 

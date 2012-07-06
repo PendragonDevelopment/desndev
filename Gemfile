@@ -31,6 +31,7 @@ gem "factory_girl_rails", ">= 3.3.0", :group => [:development, :test]
 gem "hominid"
 gem 'omniauth'
 gem 'simple_form'
+gem 'annotate', :git => 'git://github.com/jeremyolliver/annotate_models.git', :branch => 'rake_compatibility'
 
 
 # To use ActiveModel has_secure_password

@@ -3,7 +3,7 @@
 <% end %>
 
 <div class="character-creation">
-  <%= simple_form_for([@user, @character], :remote => true) do |f| %>
+  <%= simple_form_for([@user, @character]) do |f| %>
     <%= f.error_notification %>
 
     <div class="class-details">
