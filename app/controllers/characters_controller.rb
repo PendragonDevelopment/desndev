@@ -23,6 +23,7 @@ class CharactersController < ApplicationController
 	def new
 		@user = User.find(params[:user_id])
 		@character = Character.new
+		@character.attributes_total = (@character.analysis + @character.aesthetics + @character.empathy + @character.charisma + @character.curiosity + @character.intuition + @character.willpower)
 	end
 
 	def edit
@@ -33,6 +34,7 @@ class CharactersController < ApplicationController
 	def update
 		@user = User.find(params[:user_id])
 		@character = Character.find(params[:id])
+		@character.attributes_total = (@character.analysis + @character.aesthetics + @character.empathy + @character.charisma + @character.curiosity + @character.intuition + @character.willpower)
 		if @character.update_attributes(params[:character])  
 			flash[:success] = "Your character was entered into the system successfully."
 			redirect_to user_character_path(@user, @character)
@@ -44,17 +46,5 @@ class CharactersController < ApplicationController
 	def destroy
 		Character.find(params[:id]).destroy
 		redirect_to :action => 'new'
-	end
-
-	def total_points
-      @character = Character.find(params[:id])
-	  @total = @character.aesthetics + @character.analysis + @character.charisma + @character.curiosity + @character.empathy + @character.intuition + @character.willpower
-	  if @total < 45
-	  	render :flash => "You still have points to assign."
-	  elsif @total > 45
-	  	render :flash => "You've gone over your points total! Please re-assign."
-	  else
-	  	redirect_to :action => 'show', :id => @character
-	  end	  		
 	end
 end

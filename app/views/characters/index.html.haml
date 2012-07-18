@@ -1,0 +1,32 @@
+- content_for :head do
+  = render 'shared/pageheader'
+%p= @user.name
+- if @user.character.nil?
+  %p
+    Create your character: #{link_to 'New Character', new_user_character_path}
+- else
+  %p
+    Modify your character: #{link_to 'Edit Character', edit_user_character_path(@user, @character)}
+  %h1
+    = link_to image_tag(avatar_url(@user)), @user
+    = @user.name
+  %p This is your character's stats:
+  %h3
+    Class: #{@character.user_class}
+  %h3
+    Proficiency: #{@character.proficiency}
+  %h3 Attributes:
+  %p
+    Aesthetics: #{@character.aesthetics}
+  %p
+    Analysis: #{@character.analysis}
+  %p
+    Charisma: #{@character.charisma}
+  %p
+    Curiosity: #{@character.curiosity}
+  %p
+    Empathy: #{@character.empathy}
+  %p
+    Intuition: #{@character.intuition}
+  %p
+    Willpower: #{@character.willpower}
